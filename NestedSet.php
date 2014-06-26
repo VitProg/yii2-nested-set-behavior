@@ -115,6 +115,20 @@ class NestedSet extends Behavior
 
 		return $query;
 	}
+	
+	/**
+	 * Gets root node(s).
+	 * @return ActiveQuery.
+	 */
+	public function roots()
+	{
+		$query = $this->owner->find();
+		$db = $this->owner->getDb();
+
+		$query->andWhere(db->quoteColumnName($this->leftAttribute) . '=1');
+
+		return $query;
+	}
 
 	/**
 	 * Gets children for node (direct descendants only).
