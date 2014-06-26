@@ -103,7 +103,7 @@ In this example we have two trees. Tree roots are ones with ID=1 and ID=7.
 Using `NestedSet::roots()`:
 
 ```php
-$roots = Category::find()->roots()->all();
+$roots = (new Category())->roots()->all();
 ```
 
 Result:
