@@ -125,7 +125,7 @@ class NestedSet extends Behavior
 		$query = $this->owner->find();
 		$db = $this->owner->getDb();
 
-		$query->andWhere(db->quoteColumnName($this->leftAttribute) . '=1');
+		$query->andWhere($db->quoteColumnName($this->leftAttribute) . '=1');
 
 		return $query;
 	}
